@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+   
 </head>
+<script>  
+                
+        // var cities ="<%= typeof city == 'undefined'?'': city %>"
+        // console.log(cities[1])
+        var el = document.getElementById("cityState");
+        for (var t = 0; t < cities.length; t++) {
+          var option = document.createElement("option");
+          option.text = `${cities[t].name}`;
+          option.value = `${cities[t].name}`;
+          el.add(option);
+        }
+        </script>
 <body>
     <center>
 
+          <div id="cityobj" value=" "></div> 
+
         <form method="GET" action="/weather-api">
 
-            <input type="text" name="city" placeholder="enter city name..">
-            <input type="submit" value="get weather report">
+            <select id="cityState" name="city">
+                   
+                <option selected>Select City</option>
+
+              </select>
+
+              
+              <input type="submit" value="get weather report">
         
         </form>
     </center>

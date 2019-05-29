@@ -2,7 +2,8 @@ const express =require("express");
 const app =express();
 const ejs=require("ejs")
 const axios =require("axios");
-
+const cityobj = require("./routers/cities");
+console.log(cityobj[56].name);
 var OAuth = require('oauth');
 const request = require('request'); 
 const bodyparser =require("body-parser");
@@ -15,7 +16,9 @@ app.use(bodyparser.json());
 
 app.get("/",(req,res)=>{
 
-    res.render("index");
+    res.render("index",{
+        city: cityobj
+    });
 })
 
 app.get("/weather-api",(req,res)=>{
