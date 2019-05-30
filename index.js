@@ -3,7 +3,7 @@ const app =express();
 const ejs=require("ejs")
 const axios =require("axios");
 const cityobj = require("./routers/cities");
-console.log(cityobj[56].name);
+console.log(cityobj[1]);
 var OAuth = require('oauth');
 const request = require('request'); 
 const bodyparser =require("body-parser");
